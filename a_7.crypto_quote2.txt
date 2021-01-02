@@ -1,0 +1,55 @@
+# ask the user for a quotation
+quote = input("Enter a quotation: ")
+
+# variables for holding the final output
+crypto = "c"
+hint = "y"
+
+# Begin student code ========================================
+quote_list = list(quote)
+print("This is the quote")
+print(quote)
+print("This is the list")
+print(quote_list)
+
+import string
+ordered_list = []
+ordered_list = list(string.ascii_uppercase)
+
+print ("Ordered Alphabet List : " + str(string.ascii_uppercase))
+
+import random
+random_list = list(ordered_list);
+random.shuffle(random_list);
+print("Shuffled Alphabet List1 : ")
+print(random_list)
+crypto_quote = []
+quote_list_2 = list(quote_list)
+quote_list_2 = [x.upper() for x in quote_list_2] 
+for x in quote_list_2:
+    if x in random_list:
+        z = ordered_list.index(x)
+        n = random_list[z]
+        crypto_quote.append(n)
+    if x not in random_list:
+        crypto_quote.append(x)
+        continue
+        z = ordered_list.index(x)
+        n = random_list[z]
+        crypto_quote.append(n)
+for x in crypto_quote:
+    a = crypto_quote.index(x)
+    b = crypto_quote[a]
+    p = quote_list_2[a]
+    break
+print("Here is your quote: ")
+print(quote)
+c = crypto_quote
+  
+listToStr = ' '.join([str(elem) for elem in c]) 
+print("Here is the generated cryptoquote: ")
+print(listToStr)
+y = ("hint: all " + b +  " are actually " +  p)
+print(y)
+# END ============== Student Code ============
+
